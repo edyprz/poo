@@ -18,6 +18,6 @@ public class tester {
 		
 		alu1.imprime(grupo);
 		alu1.promedio(grupo);
-		
+		alu1.becamayor(grupo);
 		}
 }

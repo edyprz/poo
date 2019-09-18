@@ -51,7 +51,30 @@ public class alumno {
 			suma += lista[i].getPromedio();
 		}
 		res=suma/lista.length;
-		System.out.print(res);
+		System.out.println(res);
+	}
+	//metodo que busca el alumno con mayor beca
+	public void becamayor(alumno[] lista) {
+		float mayor = lista[0].beca;
+		for(int i=0;i<lista.length;i++) {
+			if(lista[i].beca>mayor){
+				mayor = lista[i].beca;
+			}
+		}
+		
+		System.out.println(mayor);
+	}
+	//metodo que ordena el arreglo alfabeticamente
+	public void ordenado(alumno[] lista) {
+		String menor;
+		String[] orden = new String[lista.length];
+		
+		for(int i=0;i<lista.length - 1; i++) {
+			if(lista[i].getNombre().compareToIgnoreCase(lista[i+1].getNombre()) > 0) {
+				menor = lista[i+1].getNombre();
+				
+			}
+		}
 	}
 	
 	
