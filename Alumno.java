@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Alumno implements Persona, Serializable {
 
-	Scanner scan = new Scanner(System.in);
 	private String nombre;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
@@ -69,6 +68,7 @@ public class Alumno implements Persona, Serializable {
 	}
 
 	public void registro() {
+        Scanner scan = new Scanner(System.in);
 		System.out.println("Escribe el nombre:");
 		this.nombre = scan.nextLine();
 		System.out.println("Escribe el apellido paterno:");
@@ -80,6 +80,7 @@ public class Alumno implements Persona, Serializable {
 	}
 	
 	public void registroAlumno() {
+        Scanner scan = new Scanner(System.in);
 		System.out.println("Escribe la carrera:");
 		this.carrera = scan.nextLine();
 		System.out.println("Escribe la matricula:");

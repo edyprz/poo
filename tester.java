@@ -33,7 +33,7 @@ public class tester {
 		System.out.println("Menu Principal");
 		int opcion = 0;
 		do{
-			System.out.println(menuprincipal);
+			System.out.println(menuprincipal());
 			
 			opcion = scan.nextInt();
 			switch(opcion) {
@@ -73,8 +73,16 @@ public class tester {
                             	System.out.println(v.toString());
                                 break;
                             case 5: // Salon
+                                Salon sal = new Salon();
+                                sal.registro();
+                                listaSalon.add(sal);
+                            	System.out.println(sal.toString());  
                                 break;
                             case 6: // UEA
+                                UEA uea = new UEA();
+                                uea.registro();
+                                listaUea.add(uea);
+                            	System.out.println(uea.toString());                                
                                 break;
                             case 7: // horario
                                 break;
@@ -89,9 +97,18 @@ public class tester {
                         System.out.println(desplegarRegistros());
                         busqueda = scan.nextInt();
                         switch(busqueda) {
-                            case 1: // alumno
+                            case 1:// alumno
+                                System.out.println("Dame la matricula");
+                                int mat = scan.nextInt();
+                                int indice = listaAlumno.indexOf(mat);
+                                System.out.println(listaAlumno.get(indice));
                                 break;
                             case 2: // profesor
+                                System.out.println("Dame el numero economico");
+                                int num = scan.nextInt();
+                                int iProf = listaProfesor.indexOf(num);
+                                Profesor p = listaProfesor.get(iProf);
+                                System.out.println(p.toString());
                                 break;
                             case 3: // ayudante
                                 break;
@@ -112,6 +129,7 @@ public class tester {
                     do {
                         System.out.println("Que quiere consultar?");
                         System.out.println(desplegarRegistros());
+                        
                         consulta = scan.nextInt();
                         switch(consulta) {
                             case 1: // alumno
@@ -147,20 +165,23 @@ public class tester {
                     } while (consulta != 8);  
                     break;
                     
-                default:
-                    System.out.println("ingrese un valor valido");
-            }
-        } while(opcion != 4);    
-        
+                case 4:
                     util.serializaLista(archAlumno, listaAlumno);
                 	util.serializaLista(archProfesor, listaProfesor);
                 	util.serializaLista(archAyudante, listaAyudante);
                 	util.serializaLista(archVisitante, listaVisitante);
                 	util.serializaLista(archSalon, listaSalon);
                 	util.serializaLista(archUea, listaUea);
-                	util.serializaLista(archHorario, listaHorario);    
+                	util.serializaLista(archHorario, listaHorario);
+                default: 
+                    System.out.println("ingrese un valor valido");
+                    break;
+            }
+        } while(opcion != 4);    
 	}//llave main
 	
+    
+    ///funciones externas
 	public static <E> void iterar(Iterator<E> iter) {
 		while (iter.hasNext()) 
 			System.out.println(iter.next());
@@ -181,6 +202,23 @@ public class tester {
 			    "\n 1. Alta de registro" +
 				"\n 2. Busqueda individual de registro" + 
 				"\n 3. Consulta de registro" + 
-				"\n 4. Salir"
+				"\n 4. Salir";
     }
+    
+    /*public static Object eliminarRegistro(List<E> lista, String clave) {
+        Object ret = null;
+        int indice = lista.indexOf(clave);
+        ret = lista.get(indice);
+    }*/
+    
+    /*public static int getUea(List<E> lista, String clave){
+        int ret;
+        Iterator<E> iter = lista.iterator();
+        while(iter.hasNext()){
+            clave.getClass()
+            Object item = item.next();
+            if(item.().equalsIgnoreCase(clave)) ret=item;
+        }
+        return ret;
+   // }*/
 }

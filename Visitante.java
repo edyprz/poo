@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Visitante implements Persona, Serializable {
 	
-	Scanner scan = new Scanner(System.in);
 	private String nombre;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
@@ -15,6 +14,7 @@ public class Visitante implements Persona, Serializable {
 	}
 
 	public void registro() {
+        Scanner scan = new Scanner(System.in);
 		System.out.println("Escribe el nombre:");
 		this.nombre = scan.nextLine();
 		System.out.println("Escribe el apellido paterno:");

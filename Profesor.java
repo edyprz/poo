@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class Profesor implements Academico, Serializable {
 
-	Scanner scan = new Scanner(System.in);
 	private String nombre;
 	private String apellidoPaterno;
 	private String apellidoMaterno;
@@ -65,6 +64,7 @@ public class Profesor implements Academico, Serializable {
 
 	@Override
 	public void registroEmpleado() {
+        Scanner scan = new Scanner(System.in);
 		System.out.println("Escribe el numero economico:");
 		this.numEconomico = scan.nextLine();
 		System.out.println("Escribe el titulo:");
@@ -73,6 +73,7 @@ public class Profesor implements Academico, Serializable {
 
 	@Override
 	public void registro() {
+        Scanner scan = new Scanner(System.in);
 		System.out.println("Escribe el nombre:");
 		this.nombre = scan.nextLine();
 		System.out.println("Escribe el apellido paterno:");

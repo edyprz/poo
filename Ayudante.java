@@ -1,4 +1,5 @@
 import java.io.Serializable;
+import java.util.Scanner;
 
 public class Ayudante extends Alumno implements Academico, Serializable{
 	
@@ -6,6 +7,7 @@ public class Ayudante extends Alumno implements Academico, Serializable{
 	
 	@Override
 	public void registroEmpleado() {
+        Scanner scan = new Scanner(System.in);
 		System.out.println("Escribe el numero economico:");
 		this.numEconomico = scan.nextLine();
 	}
